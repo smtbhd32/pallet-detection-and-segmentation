@@ -13,7 +13,7 @@ This repository is focused on **Pallet Detection and Segmentation** using **YOLO
 
 ## 2. Dataset Annotation and Model Training
 
-### A. Dataset Annotation
+### a. Dataset Annotation
 - **Tool Used:** The dataset was annotated using **Roboflow**, where **90 images** were manually labeled for the detection task out of the total **519 images**.
 - **Roboflow Links:**
   - **Detection Dataset:** [Pallet Detection Dataset](https://app.roboflow.com/assignment-zmesa/segment-pallets/)
@@ -21,16 +21,16 @@ This repository is focused on **Pallet Detection and Segmentation** using **YOLO
   - **Alternative Dataset:** [Pallet 2NTFF Dataset](https://app.roboflow.com/assignment-zmesa/pallet-2ntff/)
 - **Model Deployment:** The dataset was uploaded to **Roboflow** for training the YOLOv11 detection model. The initial model was then used to further annotate the dataset.
 
-### B. YOLOv11 for Detection
+### b. YOLOv11 for Detection
 - **Detection Model:** The **YOLOv11** model was used for pallet detection, achieving a **mean Average Precision (mAP) of around 60** on the custom dataset.
 
-### C. YOLOv11-seg for Segmentation
+### c. YOLOv11-seg for Segmentation
 - **Segmentation Model:** **YOLOv11-seg** was used for **pixel-level segmentation** of the detected pallets.
 
-### D. ROS Package for Detection and Segmentation
+### d. ROS Package for Detection and Segmentation
 - A **ROS 2 package** was created to subscribe to an image topic, perform both detection and segmentation, and publish the results.
 
-### E. ROS Package for Image Publishing
+### e. ROS Package for Image Publishing
 - Another **ROS 2 package** was developed to simulate camera input by publishing images from a folder to a ROS topic. This helps test the detection and segmentation pipeline in a simulated environment.
 
 ## 3. Project File Structure
@@ -57,16 +57,16 @@ The project has the following structure:
 
 ## 4. Running the Project on Your System
 
-### A. Install the Required Dependencies
+### a. Install the Required Dependencies
 Ensure you have all necessary dependencies installed by running:
 ```bash
 pip install -r requirements.txt
 ```
 
-### B. Install ROS 2 Humble
+### b. Install ROS 2 Humble
 Make sure **ROS 2 Humble** is installed on your system. You can follow the installation guide for ROS 2 Humble [here](https://docs.ros.org/en/humble/Installation.html).
 
-### C. Organize Project Files
+### c. Organize Project Files
 Save all the files in the `assignment` folder in your home directory. The directory should look like this:
 ```
 /home/your_user/assignment/
@@ -77,30 +77,30 @@ Save all the files in the `assignment` folder in your home directory. The direct
     └── ...
 ```
 
-### D. Download the Weights
-- Download the **weights folder** from the provided Google Drive link and place it in the `weights` directory under `assignment`.
+### d. Download the Weights
+- Download the **weights folder** from the provided [Google Drive link](https://drive.google.com/drive/folders/1aW8Ky6zVvp9q_QCgJUzxlyddnxsYijHu?usp=sharing) and place it in the `weights` directory under `assignment`.
 
-### E. Build the ROS 2 Workspace
+### e. Build the ROS 2 Workspace
 In the root of your ROS 2 workspace (`/home/your_user/assignment/ros_ws/`), run:
 ```bash
 cd ~/assignment/ros_ws
 colcon build
 ```
 
-### F. Source the Workspace
+### f. Source the Workspace
 After building the workspace, source it to make the packages available in the environment:
 ```bash
 source ~/assignment/ros_ws/install/setup.bash
 ```
 
-### G. Run the Object Detection and Segmentation Node
+### g. Run the Object Detection and Segmentation Node
 To run the object detection and segmentation node, use the following command:
 ```bash
 ros2 run object_detection_pkg image_processing_node --ros-args -p weight_folder:="/home/your_user/assignment/weights"
 ```
 Make sure to update the path to the `weights` folder.
 
-### H. Run the Image Publishing Node (Optional)
+### h. Run the Image Publishing Node (Optional)
 If you want to simulate camera input by publishing images from a folder, use the following command:
 ```bash
 ros2 run image_publisher_pkg image_publisher_node --ros-args -p image_folder:="/home/your_user/assignment/images" -p publish_rate:=1
