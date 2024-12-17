@@ -1,0 +1,1 @@
+# pallet-detection-and-segmentation
