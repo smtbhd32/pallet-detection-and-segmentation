@@ -15,9 +15,9 @@ This repository is focused on **Pallet Detection and Segmentation** using **YOLO
 ### a. Dataset Annotation
 - **Tool Used:** The dataset was annotated using **Roboflow**, where **90 images** were manually labeled for the detection task out of the total **519 images**.
 - **Roboflow Links:**
-  - **Detection Dataset:** [Pallet Detection Dataset](https://app.roboflow.com/assignment-zmesa/segment-pallets/)
-  - **Segmentation Dataset:** [Semantic Segmentation Dataset](https://app.roboflow.com/assignment-zmesa/semantic-segment-pallets/)
-  - **Alternative Dataset:** [Pallet 2NTFF Dataset](https://app.roboflow.com/assignment-zmesa/pallet-2ntff/)
+  - **Pallet Segmentation Dataset:** [Segmentation Dataset](https://app.roboflow.com/assignment-zmesa/segment-pallets/)
+  - **Semantic Segmentation Dataset:** [Semantic Segmentation Dataset](https://app.roboflow.com/assignment-zmesa/semantic-segment-pallets/)
+  - **Detection Dataset:** [Pallet Dataset](https://app.roboflow.com/assignment-zmesa/pallet-2ntff/)
 - **Model Deployment:** The dataset was uploaded to **Roboflow** for training the YOLOv11 detection model. The initial model was then used to further annotate the dataset.
 
 ### b. YOLOv11 for Detection
