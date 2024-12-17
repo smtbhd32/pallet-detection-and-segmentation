@@ -10,7 +10,7 @@ This repository is focused on **Pallet Detection and Segmentation** using **YOLO
   - One for receiving images from a topic and performing detection and segmentation.
   - Another for simulating camera input by publishing images from a folder to a ROS topic.
 
-## 1. Dataset Annotation and Model Training
+## Dataset Annotation and Model Training
 
 ### a. Dataset Annotation
 - **Tool Used:** The dataset was annotated using **Roboflow**, where **90 images** were manually labeled for the detection task out of the total **519 images**.
@@ -54,7 +54,7 @@ The project has the following structure:
     └── ...
 ```
 
-## 3. Running the Project on Your System
+## Running the Project on Your System
 
 ### a. Install the Required Dependencies
 Ensure you have all necessary dependencies installed by running:
@@ -108,7 +108,7 @@ Update the `image_folder` path and adjust the `publish_rate` as needed.
 
 ---
 
-## 4. Conclusion
+## Conclusion
 This repository provides an end-to-end solution for **pallet detection and segmentation** using **YOLOv11** and **YOLOv11-seg**. With ROS 2 integration, it allows real-time detection and segmentation, making it suitable for automated pallet handling systems. The fine-tuned models and custom dataset ensure high accuracy in detecting and segmenting pallets.
 
 ---
