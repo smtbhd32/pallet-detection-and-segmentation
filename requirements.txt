@@ -1,0 +1,6 @@
+rclpy
+cv_bridge
+opencv-python
+numpy
+ultralytics
+supervision
