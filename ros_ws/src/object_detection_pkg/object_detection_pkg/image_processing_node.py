@@ -11,7 +11,8 @@ import supervision as sv
 class ObjectDetectionNode(Node):
     def __init__(self):
         super().__init__('object_detection_node')
-        
+        self.declare_parameter('weight_folder', '')
+
         # Subscribe to the camera's RGB image
         self.image_subscriber = self.create_subscription(
             Image,
@@ -31,9 +32,16 @@ class ObjectDetectionNode(Node):
         self.bridge = CvBridge()
         self.depth_image = None  # Store the latest depth image
 
-        # Ensure the model files exist before loading them
-        detection_model_path = '/home/alita/assignment/weights/detect_weight/best.pt'
-        segmentation_model_path = '/home/alita/assignment/weights/segment_weight/best.pt'
+        # Get the weight folder parameter
+        self.weight_folder = self.get_parameter('weight_folder').get_parameter_value().string_value
+
+        # Define model file names
+        detection_model_filename = 'detect_weight/best.pt'
+        segmentation_model_filename = 'segment_weight/best.pt'
+
+        # Construct the full paths to the model weights
+        detection_model_path = os.path.join(self.weight_folder, detection_model_filename)
+        segmentation_model_path = os.path.join(self.weight_folder, segmentation_model_filename)
 
         if not os.path.exists(detection_model_path) or not os.path.exists(segmentation_model_path):
             self.get_logger().error("Model file(s) not found!")
