@@ -1,6 +1,5 @@
 # Pallet Detection and Segmentation Using YOLOv11 and YOLOv11-seg
 
-## 1. Project Overview
 This repository is focused on **Pallet Detection and Segmentation** using **YOLOv11** and **YOLOv11-seg** models. The project involves detecting pallets and segmenting them from their background in images using a **custom dataset**. The models are fine-tuned on this dataset to achieve high accuracy in detecting and segmenting pallets.
 
 ### Key Highlights:
@@ -11,7 +10,7 @@ This repository is focused on **Pallet Detection and Segmentation** using **YOLO
   - One for receiving images from a topic and performing detection and segmentation.
   - Another for simulating camera input by publishing images from a folder to a ROS topic.
 
-## 2. Dataset Annotation and Model Training
+## 1. Dataset Annotation and Model Training
 
 ### a. Dataset Annotation
 - **Tool Used:** The dataset was annotated using **Roboflow**, where **90 images** were manually labeled for the detection task out of the total **519 images**.
@@ -33,7 +32,7 @@ This repository is focused on **Pallet Detection and Segmentation** using **YOLO
 ### e. ROS Package for Image Publishing
 - Another **ROS 2 package** was developed to simulate camera input by publishing images from a folder to a ROS topic. This helps test the detection and segmentation pipeline in a simulated environment.
 
-## 3. Project File Structure
+## 2. Project File Structure
 The project has the following structure:
 
 ```
@@ -55,7 +54,7 @@ The project has the following structure:
     └── ...
 ```
 
-## 4. Running the Project on Your System
+## 3. Running the Project on Your System
 
 ### a. Install the Required Dependencies
 Ensure you have all necessary dependencies installed by running:
@@ -109,7 +108,7 @@ Update the `image_folder` path and adjust the `publish_rate` as needed.
 
 ---
 
-## 5. Conclusion
+## 4. Conclusion
 This repository provides an end-to-end solution for **pallet detection and segmentation** using **YOLOv11** and **YOLOv11-seg**. With ROS 2 integration, it allows real-time detection and segmentation, making it suitable for automated pallet handling systems. The fine-tuned models and custom dataset ensure high accuracy in detecting and segmenting pallets.
 
 ---
