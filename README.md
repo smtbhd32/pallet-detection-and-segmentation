@@ -32,7 +32,7 @@ This repository is focused on **Pallet Detection and Segmentation** using **YOLO
 ### e. ROS Package for Image Publishing
 - Another **ROS 2 package** was developed to simulate camera input by publishing images from a folder to a ROS topic. This helps test the detection and segmentation pipeline in a simulated environment.
 
-## 2. Project File Structure
+## Project File Structure
 The project has the following structure:
 
 ```
