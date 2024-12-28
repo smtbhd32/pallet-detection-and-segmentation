@@ -4,7 +4,7 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 import cv2
 import os
-from time import sleep
+import sys
 
 class ImagePublisher(Node):
     def __init__(self):
@@ -60,11 +60,19 @@ def main(args=None):
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
-        node.get_logger().info('Node terminated.')
+        print("\nCtrl + C pressed. Shutting down gracefully.\n")
+        if rclpy.ok():
+            node.get_logger().info('Node terminated.')
+    finally:
+        # Ensure context is active before shutdown
+        if rclpy.ok():
+            rclpy.shutdown()
+        node.destroy_node()
 
-    node.destroy_node()
-    rclpy.shutdown()
+        # Explicitly disable further logging to prevent warnings
+        rclpy.logging._root_logger = None
 
+        sys.exit(0)
 
 if __name__ == '__main__':
     main()
