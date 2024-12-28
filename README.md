@@ -95,7 +95,7 @@ source ~/assignment/ros_ws/install/setup.bash
 ### g. Run the Object Detection and Segmentation Node
 To run the object detection and segmentation node, use the following command:
 ```bash
-ros2 run object_detection_pkg image_processing_node --ros-args -p weight_folder:="/home/your_user/assignment/weights"
+ros2 run object_detection_pkg object_detection_node --ros-args -p weight_folder:="/home/your_user/assignment/weights"
 ```
 Make sure to update the path to the `weights` folder.
 
