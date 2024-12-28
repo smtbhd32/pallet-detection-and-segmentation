@@ -19,7 +19,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'image_processing_node = object_detection_pkg.image_processing_node:main',
+            'object_detection_node = object_detection_pkg.object_detection_node:main',
         ],
     },
 )
