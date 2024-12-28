@@ -1,6 +1,6 @@
 # Pallet Detection and Segmentation Using YOLOv11 and YOLOv11-seg
 
-This repository is focused on **Pallet Detection and Segmentation** using **YOLOv11** and **YOLOv11-seg** models. The project involves detecting pallets and segmenting them from their background in images using a **custom dataset**. The models are fine-tuned on this dataset to achieve high accuracy in detecting and segmenting pallets.
+This ROS-based repository is focused on **Pallet Detection and Segmentation** using **YOLOv11** and **YOLOv11-seg** models. The project involves detecting pallets and segmenting them from their background in images using a **custom dataset**. The models are fine-tuned on this dataset to achieve high accuracy in detecting and segmenting pallets. The object detection node subscribes to the camera topic to detect and segment pallets in real-time. The image publisher node simulates a camera by publishing images from the image folder to the camera topic.
 
 ### Key Highlights:
 - **Custom Dataset:** A dataset of **519 images** was used, with **90 images manually annotated** using **Roboflow** for detection and segmentation tasks. 
