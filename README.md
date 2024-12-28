@@ -65,7 +65,12 @@ pip install -r requirements.txt
 ### b. Install ROS 2 Humble
 Make sure **ROS 2 Humble** is installed on your system. You can follow the installation guide for ROS 2 Humble [here](https://docs.ros.org/en/humble/Installation.html).
 
-### c. Organize Project Files
+
+### c. Download the Weights
+- Download the **weights folder** from the provided [Google Drive link](https://drive.google.com/drive/folders/1aW8Ky6zVvp9q_QCgJUzxlyddnxsYijHu?usp=sharing) and place it in the `weights` directory under `assignment`.
+
+
+### d. Organize Project Files
 Save all the files in the `assignment` folder in your home directory. The directory should look like this:
 ```
 /home/your_user/assignment/
