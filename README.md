@@ -1,6 +1,6 @@
 # Pallet Detection and Segmentation Using YOLOv11 and YOLOv11-seg
 
-This repository is focused on **Pallet Detection and Segmentation** using **YOLOv11** and **YOLOv11-seg** models. The project involves detecting pallets and segmenting them from their background in images using a **custom dataset**. The models are fine-tuned on this dataset to achieve high accuracy in detecting and segmenting pallets.
+This ROS-based repository is focused on **Pallet Detection and Segmentation** using **YOLOv11** and **YOLOv11-seg** models. The project involves detecting pallets and segmenting them from their background in images using a **custom dataset**. The models are fine-tuned on this dataset to achieve high accuracy in detecting and segmenting pallets. The object detection node subscribes to the camera topic to detect and segment pallets in real-time. The image publisher node simulates a camera by publishing images from the image folder to the camera topic.
 
 ### Key Highlights:
 - **Custom Dataset:** A dataset of **519 images** was used, with **90 images manually annotated** using **Roboflow** for detection and segmentation tasks. 
@@ -65,7 +65,12 @@ pip install -r requirements.txt
 ### b. Install ROS 2 Humble
 Make sure **ROS 2 Humble** is installed on your system. You can follow the installation guide for ROS 2 Humble [here](https://docs.ros.org/en/humble/Installation.html).
 
-### c. Organize Project Files
+
+### c. Download the Weights
+- Download the **weights folder** from the provided [Google Drive link](https://drive.google.com/drive/folders/1aW8Ky6zVvp9q_QCgJUzxlyddnxsYijHu?usp=sharing) and place it in the `weights` directory under `assignment`.
+
+
+### d. Organize Project Files
 Save all the files in the `assignment` folder in your home directory. The directory should look like this:
 ```
 /home/your_user/assignment/
@@ -75,9 +80,6 @@ Save all the files in the `assignment` folder in your home directory. The direct
     ├── requirements.txt     # Project dependencies
     └── ...
 ```
-
-### d. Download the Weights
-- Download the **weights folder** from the provided [Google Drive link](https://drive.google.com/drive/folders/1aW8Ky6zVvp9q_QCgJUzxlyddnxsYijHu?usp=sharing) and place it in the `weights` directory under `assignment`.
 
 ### e. Build the ROS 2 Workspace
 In the root of your ROS 2 workspace (`/home/your_user/assignment/ros_ws/`), run:
@@ -95,7 +97,7 @@ source ~/assignment/ros_ws/install/setup.bash
 ### g. Run the Object Detection and Segmentation Node
 To run the object detection and segmentation node, use the following command:
 ```bash
-ros2 run object_detection_pkg image_processing_node --ros-args -p weight_folder:="/home/your_user/assignment/weights"
+ros2 run object_detection_pkg object_detection_node --ros-args -p weight_folder:="/home/your_user/assignment/weights"
 ```
 Make sure to update the path to the `weights` folder.
 
