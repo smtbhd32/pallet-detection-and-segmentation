@@ -81,9 +81,6 @@ Save all the files in the `assignment` folder in your home directory. The direct
     └── ...
 ```
 
-### d. Download the Weights
-- Download the **weights folder** from the provided [Google Drive link](https://drive.google.com/drive/folders/1aW8Ky6zVvp9q_QCgJUzxlyddnxsYijHu?usp=sharing) and place it in the `weights` directory under `assignment`.
-
 ### e. Build the ROS 2 Workspace
 In the root of your ROS 2 workspace (`/home/your_user/assignment/ros_ws/`), run:
 ```bash
